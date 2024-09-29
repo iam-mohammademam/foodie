@@ -1,51 +1,54 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useEffect, useState } from "react";
 
-function Header() {
+const Header = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  const handleTheme = () => {
+    setIsDark(!isDark);
+  };
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    console.log(isDark);
+  }, [isDark]);
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
+    <div className="py-3 px-[5%] flex items-center justify-between fixed top-0 left-0 w-screen z-50 bg-white">
+      {/* logo */}
+      <span className="text-3xl font-bold text-theme">Foodpanda</span>
+
+      {/* tools */}
+      <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
+          <button className="border-2 rounded-md w-fit py-0.5 px-2.5 hover:bg-gray-50 transition-all duration-300">
+            Log in
+          </button>
+          <button className="bg-theme text-white rounded-md w-fit py-0.5 px-2.5 hover:py-1.5 hover:px-3 transition-all duration-300">
+            Sign up
+          </button>
+          {/* cart icon */}
+          <span className="cursor-pointer text-xl ml-5">
+            <i className="bi bi-basket2"></i>
+          </span>
+          {/* isDark toggler */}
+          <span
+            onClick={handleTheme}
+            className="cursor-pointer text-white text-lg w-8 h-8 hover:bg-gray-800 bg-gray-700 transition-all duration-300 rounded-full mr-1 flex items-center justify-center"
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            {isDark ? (
+              <i className="bi bi-moon"></i>
+            ) : (
+              <i className="bi bi-sun"></i>
+            )}
+          </span>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Header;
