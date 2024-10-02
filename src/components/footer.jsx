@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="grid grid-cols-4 gap-5 px-[5%] pb-7 w-screen mt-16">
+      <div className="grid grid-cols-4 gap-5 px-[5%] pb-7 w-screen mt-16 border-t pt-4">
         <div className="">
           <h1 className="text-gray-700">@foodpanda</h1>
         </div>

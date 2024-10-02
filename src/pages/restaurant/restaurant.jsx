@@ -1,14 +1,15 @@
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/breadcrumb";
 import image from "../../assets/Durbar_Bangla_at_kuet.jpg";
+import FoodCard from "../../components/foodCard";
+
 const Restaurant = () => {
   const { restaurantName } = useParams();
   return (
     <>
       <div className="mt-20 px-[5%]">
-        <h1 className=""></h1>
         <Breadcrumb param1={"restaurant"} param2={restaurantName} />
-        <div className="my-6">
+        <div className="my-6 border rounded-lg p-3">
           <div className="flex items-center gap-4">
             <div className="w-44 h-44 rounded-md overflow-hidden">
               <img
@@ -47,6 +48,14 @@ const Restaurant = () => {
               Open in map
             </p>
           </p>
+        </div>
+        <div className="mt-6">
+          <h1 className="text-2xl font-medium mb-4">Popular items</h1>
+          <div className="grid grid-cols-3 gap-5">
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+          </div>
         </div>
       </div>
     </>
