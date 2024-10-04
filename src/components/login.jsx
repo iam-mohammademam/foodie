@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { CloseBtn, inputField, submitBtn } from "../utils/exports";
+import { CloseBtn, InputField, SubmitBtn } from "../utils/exports";
 
 const Login = ({ setShowForm }) => {
   return (
     <>
-      <div className="relative p-5">
+      <div className="relative p-10">
         <CloseBtn setShowForm={setShowForm} />
         <div
           onClick={() => setShowForm("method")}
@@ -17,20 +17,16 @@ const Login = ({ setShowForm }) => {
         <ul className="flex flex-col gap-y-2">
           <li className="flex items-center gap-2 border rounded-md px-2 ">
             <i className="bi bi-envelope shrink-0"></i>
-            {inputField("email", "example@gmail.com")}
+            <InputField type={"email"} placeholder={"example@gmail.com"} />
           </li>
           <li className="flex items-center gap-2 border rounded-md px-2 ">
             <i className="bi bi-shield-lock shrink-0"></i>
-            <input
-              type="password"
-              className="placeholder-gray-700 w-full py-1.5"
-              placeholder="234fs@#$"
-            />
+            <InputField type={"password"} placeholder={"123456"} />
           </li>
           <li className="flex items-center mr-auto gap-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900 underline">
             Forget password ?
           </li>
-          {submitBtn("Continue")}
+          <SubmitBtn text={"Continue"} />
           <span className="text-sm text-gray-700 text-center">
             Don&apos;t have an account?{"  "}
             <span

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/breadcrumb";
-import Card from "../../components/card";
+import RestaurantCard from "../../components/restaurantCard";
 
 const City = () => {
   const { cityName } = useParams();
@@ -8,12 +8,12 @@ const City = () => {
   return (
     <>
       <div className="mt-20 px-[5%]">
-        <Breadcrumb param1={"city"} param2={cityName} />
+        <Breadcrumb param2={cityName} />
+        <h1 className="text-4xl font-semibold text-gray-800 mb-6 mt-2">
+          Popular restaurants in {cityName}
+        </h1>
         <div className="grid grid-cols-4 gap-5 my-6">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <RestaurantCard />
         </div>
       </div>
     </>

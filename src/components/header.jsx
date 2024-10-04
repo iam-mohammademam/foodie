@@ -10,17 +10,16 @@ const Header = ({ setShowForm }) => {
     } else {
       document.body.classList.remove("dark");
     }
-    console.log(isDark);
   }, [isDark]);
 
   return (
-    <div className="py-3 px-[5%] flex items-center justify-between fixed top-0 left-0 w-screen z-50 bg-white">
+    <div className="py-3 px-[5%] flex items-center justify-between fixed top-0 left-0 w-screen z-50 bg-white shadow-md">
       {/* logo */}
       <span className="text-3xl font-bold text-theme">Foodpanda</span>
 
       {/* tools */}
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1">
         {/* <button className="border-2 rounded-md w-fit py-0.5 px-2.5 hover:bg-gray-50 transition-all duration-300">
             Log in
           </button>
@@ -28,12 +27,12 @@ const Header = ({ setShowForm }) => {
             Sign up
           </button> */}
         {/* cart icon */}
-        <span className="cursor-pointer text-xl">
-          <i className="bi bi-basket2"></i>
+        <span className="cursor-pointer text-lg w-9 h-9 flex items-center justify-center hover:bg-theme/5 duration-200 rounded-full">
+          <i className="bi bi-bag"></i>
         </span>
         <span
           onClick={() => setShowForm("method")}
-          className="cursor-pointer text-xl mt-1"
+          className="cursor-pointer text-xl w-9 h-9 flex items-center justify-center hover:bg-theme/5 duration-200 rounded-full"
         >
           <i className="bi bi-person"></i>
         </span>

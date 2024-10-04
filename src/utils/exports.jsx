@@ -1,5 +1,6 @@
-/* eslint-disable react-refresh/only-export-components */
-// eslint-disable-next-line react/prop-types
+/* eslint-disable react/prop-types */
+export const baseName = "/foodie";
+
 export const CloseBtn = ({ setShowForm }) => {
   return (
     <>
@@ -14,19 +15,19 @@ export const CloseBtn = ({ setShowForm }) => {
     </>
   );
 };
-export const submitBtn = (text) => {
+export const SubmitBtn = ({ text }) => {
   return (
     <>
       <button
         type="submit"
-        className="text-center hover:scale-[1.02] p-2 rounded-md border bg-theme text-white mt-2.5"
+        className="text-center hover:scale-[1.02] duration-200 p-2 rounded-md border bg-theme text-white"
       >
         {text}
       </button>
     </>
   );
 };
-export const inputField = (type, placeholder) => {
+export const InputField = ({ type, placeholder }) => {
   return (
     <>
       <input

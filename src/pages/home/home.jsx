@@ -65,7 +65,7 @@ const Home = () => {
             Interested? Let&apos;s start our partnership today!
           </p>
 
-          <button className="h-12 mt-6 w-fit text-sm rounded-xl px-3 text-lg bg-theme hover:scale-105 transition-all duration-300 text-white font-medium">
+          <button className="h-12 mt-6 w-fit rounded-xl px-3 text-lg bg-theme hover:scale-105 transition-all duration-300 text-white font-medium">
             Get started
           </button>
         </div>

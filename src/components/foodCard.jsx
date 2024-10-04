@@ -1,9 +1,25 @@
+import { useState } from "react";
 import image from "../assets/Durbar_Bangla_at_kuet.jpg";
+import DishDetails from "./dishDetails";
 
 const FoodCard = () => {
+  const [showDetails, setShowDetails] = useState(false);
   return (
     <>
-      <div className="relative p-3 h-36 border rounded-md flex items-center gap-3 hover:bg-theme/5 hover:scale-[1.02] transition-all duration-200 ease-in">
+      {showDetails && (
+        <div
+          onClick={() => {
+            setShowDetails(false);
+          }}
+          className="fixed top-0 left-0 w-full h-full bg-slate-700/40 z-[55]"
+        ></div>
+      )}
+      <div
+        onClick={() => {
+          setShowDetails(true);
+        }}
+        className="relative p-3 h-36 border rounded-md flex items-center gap-3 hover:bg-theme/5 hover:scale-[1.02] transition-all duration-200 ease-in"
+      >
         <div className="w-1/3 h-full shrink-0 overflow-hidden rounded-md bg-gray-700">
           <img
             src={image}
@@ -21,10 +37,20 @@ const FoodCard = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
-        <div className="absolute bottom-4 right-4 h-9 w-9 bg-slate-200 flex items-center justify-center rounded-full cursor-pointer">
+        <div
+          onClick={() => {
+            console.log("clicked");
+          }}
+          className="absolute bottom-4 right-4 h-9 w-9 bg-slate-200 flex items-center justify-center rounded-full cursor-pointer"
+        >
           <i className="bi bi-plus text-2xl "></i>
         </div>
       </div>
+      {showDetails && (
+        <div className="w-2/5 border shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden bg-white z-[60]">
+          <DishDetails setShowDetails={setShowDetails} />
+        </div>
+      )}
     </>
   );
 };

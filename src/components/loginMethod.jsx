@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 
-import { CloseBtn, submitBtn } from "../utils/exports";
+import { CloseBtn, SubmitBtn } from "../utils/exports";
 
 const LoginMethod = ({ setShowForm }) => {
   return (
     <>
       <div className="relative p-5">
         <CloseBtn setShowForm={setShowForm} />
-        {/* <h1 className="text-2xl font-semibold">Welcome!</h1>
-        <p className="">Sign up or Log in to continue.</p> */}
+        <h1 className="text-2xl font-semibold text-center">Welcome!</h1>
+        <p className="text-center">Sign up or Log in to continue.</p>
         <ul className="mt-7">
           <li className="flex items-center justify-center hover:scale-[1.02] transition-all duration-200 gap-2 cursor-pointer p-2 rounded-md border w-2/3 mx-auto bg-blue-700 text-white">
             <i className="bi bi-facebook"></i>
@@ -27,12 +27,12 @@ const LoginMethod = ({ setShowForm }) => {
 
         <div
           onClick={() => setShowForm("signup")}
-          className="w-2/3 mx-auto text-center hover:scale-[1.02] hover:bg-gray-100 cursor-pointer p-2 rounded-md border  mt-2.5"
+          className="w-2/3 mx-auto text-center hover:scale-[1.02] duration-200 hover:bg-gray-100 cursor-pointer p-2 rounded-md border  my-2.5"
         >
           Sign up
         </div>
         <div onClick={() => setShowForm("login")} className="w-2/3 mx-auto">
-          {submitBtn("Log in")}
+          <SubmitBtn text={"Log in"} />
         </div>
 
         <p className="text-sm mt-4">

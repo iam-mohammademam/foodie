@@ -1,10 +1,18 @@
 // import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import shop from "../assets/Untitled4.jpeg";
+import { baseName } from "../utils/exports";
 
-const Card = () => {
+const RestaurantCard = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="w-full overflow-hidden rounded-md border">
+      <div
+        onClick={() => {
+          navigate(`${baseName}/restaurant/${"kacchi bhai"}`);
+        }}
+        className="w-full overflow-hidden rounded-md border"
+      >
         <div className="h-44 overflow-hidden">
           <img
             src={shop}
@@ -29,4 +37,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default RestaurantCard;

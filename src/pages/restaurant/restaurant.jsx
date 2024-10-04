@@ -9,6 +9,7 @@ const Restaurant = () => {
     <>
       <div className="mt-20 px-[5%]">
         <Breadcrumb param1={"restaurant"} param2={restaurantName} />
+
         <div className="my-6 border rounded-lg p-3">
           <div className="flex items-center gap-4">
             <div className="w-44 h-44 rounded-md overflow-hidden">
@@ -44,9 +45,9 @@ const Restaurant = () => {
           </div>
           <p className="text-gray-700 mt-3 flex items-center gap-3">
             Agrabad,CDA Road no 10,Chittagong
-            <p className="cursor-pointer font-medium underline text-theme ml-">
+            <span className="cursor-pointer font-medium underline text-theme ml-">
               Open in map
-            </p>
+            </span>
           </p>
         </div>
         <div className="mt-6">
