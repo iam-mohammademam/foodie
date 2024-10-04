@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { closeBtn, inputField, submitBtn } from "../utils/exports";
+import { CloseBtn, inputField, submitBtn } from "../utils/exports";
 
 const Login = ({ setShowForm }) => {
   return (
     <>
       <div className="relative p-5">
-        {closeBtn()}
+        <CloseBtn setShowForm={setShowForm} />
         <div
           onClick={() => setShowForm("method")}
           className="absolute top-2 left-2 cursor-pointer h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100 hover:shadow-sm"
@@ -27,11 +27,8 @@ const Login = ({ setShowForm }) => {
               placeholder="234fs@#$"
             />
           </li>
-          <li className="flex items-center mr-auto gap-2">
-            <input type="checkbox" className="accent-black" />
-            <span className="whitespace-nowrap text-gray-800 text-sm">
-              Remember me.
-            </span>
+          <li className="flex items-center mr-auto gap-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900 underline">
+            Forget password ?
           </li>
           {submitBtn("Continue")}
           <span className="text-sm text-gray-700 text-center">

@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { closeBtn, inputField, submitBtn } from "../utils/exports";
+import { CloseBtn, inputField, submitBtn } from "../utils/exports";
 
 const Signup = ({ setShowForm }) => {
   return (
     <>
       <div className="relative p-5">
-        {closeBtn()}
+        <CloseBtn setShowForm={setShowForm} />
         <div
           onClick={() => setShowForm("method")}
           className="absolute top-2 left-2 cursor-pointer h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100 hover:shadow-sm"

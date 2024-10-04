@@ -2,11 +2,7 @@
 import { useEffect, useState } from "react";
 
 const Header = ({ setShowForm }) => {
-  const [isDark, setIsDark] = useState(false);
-
-  const handleTheme = () => {
-    setIsDark(!isDark);
-  };
+  const [isDark] = useState(false);
 
   useEffect(() => {
     if (isDark) {

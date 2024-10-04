@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line react-refresh/only-export-components
 
-import { closeBtn, submitBtn } from "../utils/exports";
+import { CloseBtn, submitBtn } from "../utils/exports";
 
 const LoginMethod = ({ setShowForm }) => {
   return (
     <>
       <div className="relative p-5">
-        {closeBtn()}
+        <CloseBtn setShowForm={setShowForm} />
         {/* <h1 className="text-2xl font-semibold">Welcome!</h1>
         <p className="">Sign up or Log in to continue.</p> */}
         <ul className="mt-7">
