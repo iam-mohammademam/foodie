@@ -19,3 +19,12 @@ input,button{
     outline: none !important;
 
 }
+.ellipsis {
+    display: -webkit-box;      /* Important for the flex layout */
+    -webkit-box-orient: vertical; /* Makes the box vertical */
+    -webkit-line-clamp: 2;   /* Limits the text to 2 lines */
+    overflow: hidden;         /* Hides the overflow text */
+    text-overflow: ellipsis; /* Adds the ellipsis */
+    /* max-height: 3em;       
+    line-height: 1.5em;      */
+}

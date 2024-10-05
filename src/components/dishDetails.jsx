@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import img from "../assets/home-vendor-bd.webp";
 import { SubmitBtn } from "../utils/exports";
 
-const DishDetails = ({ setShowDetails }) => {
+const DishDetails = ({ setShowDetails, item }) => {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -11,7 +10,7 @@ const DishDetails = ({ setShowDetails }) => {
       <div className="flex flex-col max-h-[80vh] overflow-y-scroll pb-28">
         <span
           onClick={() => {
-            setShowDetails(false);
+            setShowDetails("");
           }}
           className="absolute top-3 shadow-md hover:opacity-80 bg-white duration-200 ease-in cursor-pointer right-3 flex items-center justify-center w-8 h-8 border rounded-full"
         >
@@ -20,26 +19,23 @@ const DishDetails = ({ setShowDetails }) => {
         {/* top bar */}
         <div className="w-full shrink-0 h-60 overflow-hidden">
           <img
-            src={img}
+            src={item?.img}
             alt=""
             className="w-full h-full object-cover object-center"
           />
         </div>
         <div className="px-3 pt-4">
           <div className="border-b pb-3">
-            <h1 className="text-xl font-semibold">Chicken Biryani</h1>
+            <h1 className="text-xl font-semibold capitalize">{item?.title}</h1>
             <div className="flex items-center">
-              <span className="font-semibold text-theme text-lg">200 tk</span>
+              <span className="font-semibold text-theme text-lg">
+                Tk {item?.price}
+              </span>
               <span className="text-gray-600 line-through ml-3">200 tk</span>
             </div>
             <p className="text-gray-800 capitalize mt-2">1 plate</p>
             <br />
-            <span className="text-gray-600">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Praesentium aliquam beatae consectetur quibusdam a fuga quos nulla
-              labore perspiciatis rem accusantium eaque eveniet sit, dignissimos
-              facilis animi atque saepe ipsa.
-            </span>
+            <span className="text-gray-600">{item?.desc}</span>
           </div>
           <br />
           <div className="">

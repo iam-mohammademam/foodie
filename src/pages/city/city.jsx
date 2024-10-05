@@ -1,9 +1,25 @@
+/* eslint-disable no-unused-vars */
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/breadcrumb";
 import RestaurantCard from "../../components/restaurantCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const City = () => {
   const { cityName } = useParams();
+  // const [data, setData] = useState([]);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const res = await axios.get(`${import.meta.env.VITE_API_URL}/data`);
+  //     setData(res?.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <>

@@ -2,9 +2,24 @@ import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/breadcrumb";
 import image from "../../assets/Durbar_Bangla_at_kuet.jpg";
 import FoodCard from "../../components/foodCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Restaurant = () => {
   const { restaurantName } = useParams();
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/data`);
+      setData(res?.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <div className="mt-20 px-[5%]">
@@ -53,9 +68,9 @@ const Restaurant = () => {
         <div className="mt-6">
           <h1 className="text-2xl font-medium mb-4">Popular items</h1>
           <div className="grid grid-cols-3 gap-5">
-            <FoodCard />
-            <FoodCard />
-            <FoodCard />
+            {data?.result?.map((item, index) => (
+              <FoodCard item={item} key={index} />
+            ))}
           </div>
         </div>
       </div>
