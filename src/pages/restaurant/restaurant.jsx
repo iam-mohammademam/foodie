@@ -11,7 +11,7 @@ const Restaurant = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/data`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/dish/list`);
       setData(res?.data);
     } catch (error) {
       console.log(error);
